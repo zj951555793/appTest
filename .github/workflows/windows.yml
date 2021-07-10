@@ -84,9 +84,7 @@ jobs:
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
           dir
-          cd myTest1
-          dir
-          qmake
+          qmake myTest1/myTest1.pro
           nmake
       # 打包 
       - name: package
