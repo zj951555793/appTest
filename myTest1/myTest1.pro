@@ -23,10 +23,3 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-
-
-CONFIG(debug,debug|release) {
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/bin/debug)
-} else {
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/bin/release)
-}
