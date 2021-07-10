@@ -3,7 +3,7 @@ on:
   # push代码时触发workflow
   push:
     paths:
-      - 'myTest1'
+      - './myTest1'
       - '.github/workflows/windows.yml'
   # pull_request:
   #   paths:
