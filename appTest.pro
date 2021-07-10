@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    src/appTest1
+    $$PWD/src/appTest1
