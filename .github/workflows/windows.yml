@@ -83,6 +83,7 @@ jobs:
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
           dir
+          cd myTest1
           qmake
           nmake
       # 打包 
