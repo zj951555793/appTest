@@ -3,8 +3,7 @@ on:
   # push代码时触发workflow
   push:
     paths:
-      - '*.pro'
-      - 'src'
+      - 'myTest1'
       - '.github/workflows/windows.yml'
   # pull_request:
   #   paths:
@@ -78,13 +77,15 @@ jobs:
         shell: cmd
         run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
-          cd ${Working directory}
-          qmake
-          nmake
+     
           echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
+          pwd
+      # cd ${Working directory}
+          qmake
+          nmake
       # 打包 
       - name: package
         id: package      
