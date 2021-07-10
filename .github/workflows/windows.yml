@@ -11,7 +11,7 @@ on:
     paths:
       - '*.pro'
       - 'src/**'
-       - 'src/**/**'
+      - 'src/**/**'
       - '.github/workflows/windows.yml' 
 jobs:
   build:
