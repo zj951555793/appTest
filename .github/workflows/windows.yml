@@ -4,13 +4,13 @@ on:
   push:
     paths:
       - '*.pro'
-      - 'src/**'
+      - 'src'
       - '.github/workflows/windows.yml'
-  pull_request:
-    paths:
-      - '*.pro'
-      - 'src/**'
-      - '.github/workflows/windows.yml' 
+  # pull_request:
+  #   paths:
+  #     - '*.pro'
+  #     - 'src/**'
+  #     - '.github/workflows/windows.yml' 
 jobs:
   build:
     name: Build
@@ -78,6 +78,7 @@ jobs:
         shell: cmd
         run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
+          cd ${Working directory}
           qmake
           nmake
           echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
