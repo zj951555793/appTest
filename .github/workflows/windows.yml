@@ -5,6 +5,7 @@ on:
     paths:
       - './myTest1'
       - '.github/workflows/windows.yml'
+
   # pull_request:
   #   paths:
   #     - '*.pro'
